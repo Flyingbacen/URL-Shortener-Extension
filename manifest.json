@@ -17,7 +17,12 @@
     "scripting",
     "storage"
   ],
+  "browser_specific_settings": {
+  "gecko": {
+    "id": "@github.flyingbacen"
+  }
+}
+
   "options_page": "options.html",
-  "update_url": "https://extension-updates.opera.com/api/omaha/update/",
   "version": "1.0"
 }
