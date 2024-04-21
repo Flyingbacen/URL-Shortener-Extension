@@ -1,28 +1,13 @@
 {
-  "action": {
-    "default_popup": "popup.html"
-  },
+  "action": {"default_popup":"popup.html"},
   "description": "A simple extension that shortens URLs using the Bitly API.",
-  "developer": {
-    "name": "Shidoshi"
-  },
-  "host_permissions": [
-    "https://api-ssl.bitly.com/"
-  ],
+  "developer": {"name": "Shidoshi"},
+  "host_permissions": ["https://api-ssl.bitly.com/"],
   "manifest_version": 3,
   "name": "Bitly Link Shortener",
-  "permissions": [
-    "clipboardWrite",
-    "activeTab",
-    "scripting",
-    "storage"
-  ],
-  "browser_specific_settings": {
-  "gecko": {
-    "id": "@github.flyingbacen"
-  }
-}
-
+  "permissions": ["clipboardWrite","activeTab","scripting","storage"],
+  "browser_specific_settings": {"gecko":{"id":"@github.flyingbacen"}},
   "options_page": "options.html",
-  "version": "1.1"
+  "options_ui": {"page":"options.html"},
+  "version": "1.2"
 }
