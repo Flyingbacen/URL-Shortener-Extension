@@ -7,29 +7,10 @@
       body {
         width: 200px;
         margin: 0;
-        padding: 10
+        padding: 10;
+        background-color: white;
       }
-
-      input[type="text"] {
-        width: 100%;
-        margin-bottom: 10px;
-        box-sizing: border-box;
-      }
-
-      button {
-        width: 100%;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        padding: 8px;
-        font-size: 16px;
-        cursor: pointer;
-      }
-
-      button:hover {
-        background-color: #3e8e41;
-      }
-
+      
       #short-url {
         margin-top: 10px;
       }
@@ -42,7 +23,6 @@
   </head>
   <body>
     <h1>Bitly URL Shortener</h1>
-    <button id="shorten-btn">Shorten Current Tab URL</button>
     <p id="short-url"></p>
     <p id="error"></p>
     <script src="popup.js"></script>
