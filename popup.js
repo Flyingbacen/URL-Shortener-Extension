@@ -17,10 +17,11 @@ function shortenUrl() {
         .then(data => {
           const shortenedUrl = data.link;
           if (shortenedUrl) {
+          document.getElementById('long-url').innerHTML = `<a href="${longUrl}" target="_blank">${longUrl}</a>`;
           document.getElementById('short-url').innerHTML = `<a href="${shortenedUrl}" target="_blank">${shortenedUrl}</a>`;
           copyToClipboard(shortenedUrl);
           } else {
-            document.getElementById('short-url').innerHTML = 'Error: Unable to shorten URL.' + data.message || '';
+            document.getElementById('error').innerHTML = 'Error: Unable to shorten URL.' + data.message || '';
           }
         })
         .catch(error => {
@@ -30,14 +31,13 @@ function shortenUrl() {
     });
   }
   
-  function copyToClipboard(text) {
-    const textarea = document.createElement('textarea');
-    textarea.value = text;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textarea);
-  }
-  
-  document.addEventListener('DOMContentLoaded', shortenUrl);
-  
+function copyToClipboard(text) {
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textarea);
+}
+
+document.addEventListener('DOMContentLoaded', shortenUrl);

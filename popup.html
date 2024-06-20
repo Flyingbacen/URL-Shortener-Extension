@@ -9,10 +9,14 @@
         margin: 0;
         padding: 10;
         background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
       
       #short-url {
-        margin-top: 10px;
+        margin-top: 5px;
       }
 
       #error {
@@ -22,7 +26,8 @@
     </style>
   </head>
   <body>
-    <h1>Bitly URL Shortener</h1>
+    <h1 style="text-align: center;">Bitly URL Shortener</h1>
+    <p id="long-url"></p>
     <p id="short-url"></p>
     <p id="error"></p>
     <script src="popup.js"></script>
