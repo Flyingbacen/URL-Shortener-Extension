@@ -44,6 +44,6 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git add update-chrome.xml update-firefox.json
           git commit -m "Update update links"
-          git push
+          git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
