@@ -24,19 +24,19 @@ jobs:
           # Update the XML file with the latest release version and URL
           xml_content="<?xml version='1.0' encoding='UTF-8'?>\n"
           xml_content+="<gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>\n"
-          xml_content+="  <app appid='olppinjbobjojienlmpldhojghcoippm'>\n"
+          xml_content+="  <app appid='keooinmjjfpbpfdaljdlloiabhlhnnek'>\n"
           xml_content+="    <updatecheck codebase='$codebase_url' version='$version' />\n"
           xml_content+="  </app>\n"
           xml_content+="</gupdate>\n"
           
           # Save the updated content to update.xml
-          echo -e "$xml_content" > update.xml
+          echo -e "$xml_content" > update-chrome.xml
 
           # Update the JSON file with the latest release version and URL
-          json_content=$(cat addons.json | jq --arg version "$version" --arg url "$codebase_url" '.addons["{a83fdac6-556d-4a93-ac87-cb6dcc1183f3}"].updates[0].version = $version | .addons["{a83fdac6-556d-4a93-ac87-cb6dcc1183f3}"].updates[0].update_link = $url')
+          json_content=$(cat addons.json | jq --arg version "$version" --arg url "$codebase_url" '.addons["{53e85a65-3531-4e87-a95d-204882456e22}"].updates[0].version = $version | .addons["{a83fdac6-556d-4a93-ac87-cb6dcc1183f3}"].updates[0].update_link = $url')
 
           # Save the updated content to addons.json
-          echo "$json_content" > addons.json
+          echo "$json_content" > update-firefox.json
 
       - name: Commit and push updated files
         run: |
