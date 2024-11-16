@@ -33,7 +33,7 @@ jobs:
           echo -e "$xml_content" > update-chrome.xml
 
           # Update the JSON file with the latest release version and URL
-          json_content=$(cat addons.json | jq --arg version "$version" --arg url "$codebase_url" '.addons["{53e85a65-3531-4e87-a95d-204882456e22}"].updates[0].version = $version | .addons["{53e85a65-3531-4e87-a95d-204882456e22}"].updates[0].update_link = $url')
+          json_content=$(cat update-firefox.json | jq --arg version "$version" --arg url "$codebase_url" '.addons["{53e85a65-3531-4e87-a95d-204882456e22}"].updates[0].version = $version | .addons["{53e85a65-3531-4e87-a95d-204882456e22}"].updates[0].update_link = $url')
 
           # Save the updated content to addons.json
           echo "$json_content" > update-firefox.json
@@ -42,8 +42,8 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add update.xml addons.json
-          git commit -m "Update update.xml and addons.json to latest release"
+          git add update-chrome.xml update-firefox.json
+          git commit -m "Update update links"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
